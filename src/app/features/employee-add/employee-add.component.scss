@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.form-section {
+  margin-bottom: $spacing-xl;
+
+  h3 {
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $border-color;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.employee-form {
+  app-form-field {
+    display: block;
+    padding: 5px;
+  }
+}
+
+.snackbar-success {
+  --mdc-snackbar-container-color: #4caf50;
+  --mdc-snackbar-supporting-text-color: white;
+}

@@ -1,0 +1,129 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.layout-container {
+  height: 100vh;
+  background: $bg-primary;
+}
+
+.sidebar {
+  width: $sidebar-width;
+  background: $bg-sidebar;
+  border: none;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-below(md) {
+    width: 240px;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-logo {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: $primary-light;
+}
+
+.sidebar-brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text-white;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: $spacing-sm;
+
+  ::ng-deep a.mat-mdc-list-item {
+    --mdc-list-list-item-label-text-color: #{$text-white};
+    --mdc-list-list-item-hover-label-text-color: #{$text-white};
+    --mdc-list-list-item-focus-label-text-color: #{$text-white};
+
+    border-radius: $radius-sm;
+    margin-bottom: 2px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.500);
+    }
+
+    &.active-link {
+      background: rgba($primary-light, 0.629);
+    }
+
+    .mdc-list-item__primary-text {
+      color: $text-white;
+    }
+
+    .mat-mdc-list-item-icon {
+      color: $text-white;
+    }
+  }
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $spacing-lg;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  button {
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: $text-white;
+    }
+  }
+}
+
+.content-area {
+  background: $bg-primary;
+}
+
+.mobile-header {
+  display: none;
+  background: $bg-sidebar;
+  color: $text-white;
+
+  @include respond-below(md) {
+    display: flex;
+  }
+
+  .toolbar-spacer {
+    flex: 1;
+  }
+}
+
+.main-content {
+  padding: $spacing-lg;
+  min-height: calc(100vh - #{$header-height});
+
+  @include respond-below(md) {
+    padding: $spacing-md;
+  }
+}

@@ -1,0 +1,134 @@
+@use 'variables' as *;
+
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-above($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin card {
+  background: $bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border-color;
+  padding: $spacing-lg;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin page-container {
+  padding: $spacing-lg;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid $border-color;
+  border-radius: $radius-sm;
+  font-size: 14px;
+  font-family: $font-family;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.12);
+  }
+
+  &.ng-invalid.ng-touched {
+    border-color: $warn;
+    box-shadow: 0 0 0 3px rgba($warn, 0.12);
+  }
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: 10px 20px;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: $font-family;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  line-height: 1.4;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $primary;
+  color: $text-white;
+
+  &:hover:not(:disabled) {
+    background: $primary-dark;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn-base;
+  background: transparent;
+  color: $text-primary;
+  border: 1.5px solid $border-color;
+
+  &:hover:not(:disabled) {
+    background: $bg-primary;
+  }
+}

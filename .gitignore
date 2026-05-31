@@ -1,0 +1,14 @@
+node_modules/
+dist/
+tmp/
+out-tsc/
+*.log
+*.pid
+*.seed
+*.pid.lock
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-error.log*
+coverage/
+/.angular/

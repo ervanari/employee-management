@@ -1,0 +1,124 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, $primary-dark 0%, $primary 50%, $primary-light 100%);
+  padding: $spacing-md;
+}
+
+.login-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: $spacing-xl $spacing-lg;
+  border-radius: $radius-lg;
+  position: relative;
+  z-index: 1;
+  box-shadow: $shadow-lg;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.login-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary 0%, $primary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto $spacing-md;
+
+  mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: $text-white;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  .full-width {
+    width: 100%;
+  }
+}
+
+.login-btn {
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: $radius-sm;
+  margin-top: $spacing-sm;
+
+  mat-spinner {
+    display: inline-block;
+    margin-right: $spacing-sm;
+  }
+}
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: rgba($warn, 0.08);
+  border: 1px solid rgba($warn, 0.2);
+  border-radius: $radius-sm;
+  color: $warn;
+  font-size: 0.875rem;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: $spacing-lg;
+}
+
+@include respond-below(sm) {
+  .login-card {
+    padding: $spacing-lg;
+    border-radius: $radius-md;
+  }
+
+  .login-icon {
+    width: 52px;
+    height: 52px;
+
+    mat-icon {
+      font-size: 26px;
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
