@@ -28,7 +28,7 @@ import { AuthService } from '../../core/services/auth.service';
           <div class="login-icon">
             <mat-icon>group</mat-icon>
           </div>
-          <h1>Employee Mandiri</h1>
+          <h1>Employee</h1>
           <p class="text-muted">Sign in to your account</p>
         </div>
 

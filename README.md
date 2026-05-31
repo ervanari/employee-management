@@ -1,6 +1,6 @@
-# Employee Management Mandiri
+# Employee Management
 
-Employee Management Mandiri System 
+Employee Management System 
 
 ## Features
 

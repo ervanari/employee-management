@@ -29,7 +29,7 @@ import { AuthService } from '../../core/services/auth.service';
       >
         <div class="sidebar-header">
           <mat-icon class="sidebar-logo">group</mat-icon>
-          <span class="sidebar-brand">Employee Mandiri</span>
+          <span class="sidebar-brand">Employee</span>
         </div>
 
         <mat-nav-list class="sidebar-nav">
@@ -77,7 +77,7 @@ import { AuthService } from '../../core/services/auth.service';
           <button mat-icon-button (click)="toggleSidebar()">
             <mat-icon>menu</mat-icon>
           </button>
-          <span>Employee Mandiri</span>
+          <span>Employee</span>
           <span class="toolbar-spacer"></span>
           <button mat-icon-button (click)="logout()" title="Logout">
             <mat-icon>logout</mat-icon>
